@@ -15,11 +15,17 @@
     <h1>Calculation Library</h1>
     <p>This is library allows for basic mathmatical functions to be tied to HTML interfaces for maximum flexiablity.</p>
     <h2>Sample</h2>
-    <template-js datastore="total:0">
+    <js-c is="calc" datastore="{ total:2, base:10, interest:0.13 }">
         <h3>Tax Calculation</h3>
-
-
-    </template-js>
+        <label for="base">Base Number ($)
+            <input id="base" type="text" placeholder="0.00" data-@jsc="change:setBase"/>
+        </label>
+        <br>
+        <label for="interest">Interest (%)
+            <input id="interest" type="text" placeholder="13" data-@jsc="change:setInterest"/>
+        </label>
+        <p data-@jsc="text:getTotal"></p>
+    </js-c>
 </main>
 <footer>
 
@@ -27,6 +33,6 @@
 <!--
 @SCRIPTS
 -->
-<script src="/vendor/requirejs/2.3.6/require.js" data-main="/src/agama"></script>
+<script src="/vendor/requirejs/2.3.6/require.js" data-main="/core/jsc"></script>
 </body>
 </html>
